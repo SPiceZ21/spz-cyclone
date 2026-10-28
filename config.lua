@@ -60,11 +60,43 @@ Config.Cyclone = {
 }
 
 -- ── Cars ────────────────────────────────────────────────────────────────────
-Config.Cars = {
-    "blista", "futo", "prairie", "rhapsody", "dilettante",
-    "panto", "issi2", "brioso", "kuruma", "sultan",
-    "bison", "sadler", "sandking", "rebel2", "dubsta3",
-    "firetruk", "mule", "benson", "taco", "caddy2",
+-- Each ROUND one category is drawn at random and every player gets a random
+-- car from it, so the field is matched but different every round. Base-game
+-- models only. Drop a category or a car to take it out of the draw.
+Config.CarClasses = {
+    { name = "Super", cars = {
+        "adder", "zentorno", "t20", "osiris", "entityxf", "cheetah", "turismor", "reaper",
+        "fmj", "pfister811", "tempesta", "italigtb", "nero", "vagner", "xa21", "tyrus",
+        "sc1", "cyclone", "visione", "autarch", "krieger", "emerus", "thrax", "zorrusso", "furia" } },
+    { name = "Sports", cars = {
+        "comet2", "comet5", "comets2r", "carbonizzare", "elegy", "elegy2", "feltzer2",
+        "furoregt", "jester", "jester3", "jugular", "kuruma", "massacro", "neon",
+        "pariah", "penumbra2", "rapidgt", "schafter3", "schlagen", "schwarzer",
+        "specter", "sultan2", "vstr", "banshee", "buffalo2", "italigto",
+        "ninef", "omnis", "growler", "calico", "euros", "zr350", "remus" } },
+    { name = "Muscle", cars = {
+        "dominator", "dominator3", "gauntlet", "gauntlet4", "buccaneer2", "dukes", "sabregt2",
+        "vigero", "phoenix", "blade", "ruiner", "stalion", "ellie", "impaler", "yosemite",
+        "deviant", "vamos", "clique", "tulip", "hermes" } },
+    { name = "Sports Classics", cars = {
+        "ztype", "stinger", "monroe", "jb700", "cheetah2", "infernus2", "torero", "turismo2",
+        "gt500", "savestra", "viseris", "z190", "michelli", "fagaloa", "cheburek", "rapidgt3",
+        "retinue", "ardent", "mamba", "coquette2" } },
+    { name = "Coupes", cars = {
+        "cogcabrio", "exemplar", "f620", "felon", "jackal", "oracle2", "sentinel", "sentinel2",
+        "windsor", "zion", "previon", "kanjosj" } },
+    { name = "Sedans", cars = {
+        "asea", "fugitive", "glendale", "ingot", "intruder", "premier", "primo", "schafter2",
+        "stanier", "stratum", "sultan", "tailgater", "washington", "warrener", "cinquemila", "deity" } },
+    { name = "Compacts", cars = {
+        "blista", "brioso", "dilettante", "issi2", "panto", "prairie", "rhapsody", "asbo",
+        "kanjo", "club", "weevil", "brioso2" } },
+    { name = "SUVs", cars = {
+        "baller2", "cavalcade2", "dubsta", "granger", "gresley", "huntley", "landstalker2",
+        "mesa", "patriot", "rocoto", "seminole2", "toros", "xls", "rebla", "novak" } },
+    { name = "Off-road", cars = {
+        "sandking", "rebel2", "bifta", "brawler", "dubsta3", "kamacho", "mesa3", "riata",
+        "trophytruck", "caracara2", "everon", "winky", "hellion" } },
 }
 Config.CarInvincible = true
 
