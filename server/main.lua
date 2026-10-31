@@ -121,8 +121,17 @@ local function spawnCarFor(_, bucketId, x, y, z, heading, pool)
 end
 
 local function deleteCar(p)
-    if p and p.veh and DoesEntityExist(p.veh) then DeleteEntity(p.veh) end
+    local veh = p and p.veh
     if p then p.veh = nil end
+    if not veh or not DoesEntityExist(veh) then return end
+    DeleteEntity(veh)
+    -- A car whose driver just disconnected is mid hand-over to another client,
+    -- and a delete in that window can be lost. Check again and retry.
+    for _, ms in ipairs({ 500, 2000, 5000 }) do
+        SetTimeout(ms, function()
+            if DoesEntityExist(veh) then DeleteEntity(veh) end
+        end)
+    end
 end
 
 local function eliminate(r, src, why)
@@ -827,6 +836,11 @@ end)
 
 AddEventHandler("playerDropped", function()
     local src = source
+    -- Whatever they were sitting in goes too, even if it is not the car this
+    -- game handed them (or that handle was already lost).
+    local ped = GetPlayerPed(src)
+    local seat = ped ~= 0 and GetVehiclePedIsIn(ped, false) or 0
+    if seat ~= 0 and roundOf(src) then deleteCar({ veh = seat }) end
     local r = roundOf(src)
     if r then
         local p = r.players[src]
