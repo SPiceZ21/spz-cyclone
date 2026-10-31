@@ -3,7 +3,7 @@ game 'gta5'
 
 name 'spz-cyclone'
 description 'SPiceZ Minigame - Cyclone. Everyone drives on one big single-colour deck in the sky; a roaming cyclone lifts cars and throws them off. One round, last car standing wins. Free to play.'
-version '1.1.1'
+version '1.1.2'
 author 'SPiceZ-Core'
 lua54 'yes'
 
