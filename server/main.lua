@@ -43,8 +43,8 @@ end
 local function payPid(pid, amt, reason)
     if not pid or amt <= 0 then return end
     local s = srcFromPid(pid)
-    if s and GetResourceState("spz-progression") == "started" then
-        exports["spz-progression"]:GrantBonus(s, { credits = amt, reason = reason })
+    if s and GetResourceState("spz-races") == "started" then
+        exports["spz-races"]:GrantBonus(s, { credits = amt, reason = reason })
     else
         MySQL.update.await("UPDATE players SET credits = credits + ? WHERE id = ?", { amt, pid })
     end
