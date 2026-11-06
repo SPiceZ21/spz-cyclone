@@ -27,7 +27,6 @@ dependencies {
   'ox_lib',
   'oxmysql',
   'spz-core',
-  'spz-identity',
   'spz-races',        -- progression (credits)
   'spz-minigames',   -- shared in-game HUD
   'spz-colorrush',   -- deck tile models
